@@ -253,3 +253,79 @@ form textarea:focus{
         overflow-x:auto;
     }
 }
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100%;
+    background:#0f172a;
+    padding:30px 20px;
+}
+
+.sidebar h2{
+    color:white;
+    margin-bottom:40px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:14px;
+    margin-bottom:10px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#2563eb;
+}
+
+.main-content{
+    margin-left:280px;
+    padding:30px;
+}
+
+.topbar{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.hero{
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+    );
+
+    color:white;
+    padding:40px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    margin-bottom:10px;
+}
+
+.btn{
+    margin-right:5px;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main-content{
+    margin-left:0;
+}
+
+}
