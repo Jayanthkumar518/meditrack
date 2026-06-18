@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+<h2>Equipment Inventory</h2>
+
+<a href="/add_equipment" class="btn">
+Add Equipment
+</a>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Serial</th>
+<th>Department</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for e in equipment %}
+
+<tr>
+
+<td>{{ e.equipment_id }}</td>
+
+<td>{{ e.equipment_name }}</td>
+
+<td>{{ e.serial_number }}</td>
+
+<td>{{ e.department }}</td>
+
+<td>
+
+{% if e.status == "Active" %}
+<span class="badge badge-active">
+{{ e.status }}
+</span>
+
+{% elif e.status == "Under Maintenance" %}
+<span class="badge badge-maintenance">
+{{ e.status }}
+</span>
+
+{% else %}
+<span class="badge badge-retired">
+{{ e.status }}
+</span>
+{% endif %}
+
+</td>
+
+<td>
+
+<a class="btn"
+href="/equipment/{{e.equipment_id}}">
+History
+</a>
+
+<a class="btn"
+href="/add_maintenance/{{e.equipment_id}}">
+Log
+</a>
+
+<br><br>
+
+<form method="POST"
+action="/update_status/{{e.equipment_id}}">
+
+<select name="status">
+
+<option>Active</option>
+
+<option>
+Under Maintenance
+</option>
+
+<option>
+Decommissioned
+</option>
+
+</select>
+
+<br><br>
+
+<button class="btn"
+type="submit">
+
+Update
+
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endblock %}

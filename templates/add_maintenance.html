@@ -2,36 +2,49 @@
 
 {% block content %}
 
-<h2>Add Maintenance</h2>
+<h2 class="section-title">
+Maintenance Log
+</h2>
 
 <form method="POST">
 
-<input type="date"
+<label>Maintenance Date</label>
+
+<input
+type="date"
 name="maintenance_date">
 
-<br><br>
+<label>Technician Name</label>
 
-<input name="technician_name">
+<input
+name="technician_name">
 
-<br><br>
-
-<textarea
-name="issue_reported"></textarea>
-
-<br><br>
+<label>Issue Reported</label>
 
 <textarea
-name="resolution_notes"></textarea>
+name="issue_reported">
+</textarea>
 
-<br><br>
+<label>Resolution Notes</label>
 
-<input type="date"
+<textarea
+name="resolution_notes">
+</textarea>
+
+<label>Next Due Date</label>
+
+<input
+type="date"
 name="next_due_date">
 
 <br><br>
 
-<button type="submit">
-Save
+<button
+class="btn"
+type="submit">
+
+Save Maintenance
+
 </button>
 
 </form>

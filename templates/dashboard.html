@@ -2,28 +2,49 @@
 
 {% block content %}
 
-<h2>Dashboard</h2>
+<div class="hero">
 
-<p>Total Equipment: {{ total }}</p>
+    <h1>Welcome Back 👋</h1>
 
-<h3>Status Summary</h3>
+    <p>
+        Monitor equipment health,
+        maintenance schedules,
+        and hospital operations in real time.
+    </p>
 
-<ul>
-{% for s in status_counts %}
-<li>{{ s.status }} : {{ s.count }}</li>
-{% endfor %}
-</ul>
+</div>
 
-<h3>Overdue Maintenance</h3>
+<div class="stats">
 
-<table border="1">
+    <div class="card">
+        <h3>Total Equipment</h3>
+        <p>{{ total }}</p>
+    </div>
 
+    {% for s in status_counts %}
+    <div class="card">
+        <h3>{{ s.status }}</h3>
+        <p>{{ s.count }}</p>
+    </div>
+    {% endfor %}
+
+</div>
+
+<h2 class="section-title">
+Overdue Maintenance
+</h2>
+
+<table>
+
+<thead>
 <tr>
 <th>Equipment</th>
 <th>Department</th>
 <th>Next Due</th>
 </tr>
+</thead>
 
+<tbody>
 {% for item in overdue %}
 <tr>
 <td>{{ item.equipment_name }}</td>
@@ -31,6 +52,7 @@
 <td>{{ item.next_due_date }}</td>
 </tr>
 {% endfor %}
+</tbody>
 
 </table>
 

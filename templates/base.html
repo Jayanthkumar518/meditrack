@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MediTrack</title>
-<link rel="stylesheet"
-href="{{ url_for('static',
-filename='style.css') }}">
+    <title>MediTrack Healthcare Management</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-<h1>MediTrack</h1>
+<div class="sidebar">
 
-<nav>
-<a href="/">Dashboard</a>
-<a href="/equipment">Equipment</a>
-<a href="/add_equipment">Add Equipment</a>
-</nav>
+    <h2>
+        <i class="fa-solid fa-hospital"></i>
+        MediTrack
+    </h2>
 
-<hr>
+    <a href="/">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+    </a>
+
+    <a href="/equipment">
+        <i class="fa-solid fa-stethoscope"></i>
+        Equipment
+    </a>
+
+    <a href="/add_equipment">
+        <i class="fa-solid fa-plus"></i>
+        Add Equipment
+    </a>
+
+</div>
+
+<div class="main-content">
+
+<div class="topbar">
+    <h1>Healthcare Asset Management System</h1>
+</div>
 
 {% block content %}
 {% endblock %}
+
+</div>
 
 </body>
 </html>

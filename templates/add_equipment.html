@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="section-title">
+Add Equipment
+</h2>
+
+<form method="POST">
+
+<label>Equipment Name</label>
+
+<input name="equipment_name">
+
+<label>Serial Number</label>
+
+<input name="serial_number">
+
+<label>Department</label>
+
+<input name="department">
+
+<label>Purchase Date</label>
+
+<input type="date"
+name="purchase_date">
+
+<label>Status</label>
+
+<select name="status">
+
+<option>Active</option>
+
+<option>
+Under Maintenance
+</option>
+
+<option>
+Decommissioned
+</option>
+
+</select>
+
+<br><br>
+
+<button type="submit"
+class="btn">
+
+Save Equipment
+
+</button>
+
+</form>
+
+{% endblock %}
