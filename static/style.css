@@ -1,0 +1,18 @@
+body{
+font-family:Arial;
+margin:40px;
+}
+
+nav a{
+margin-right:15px;
+text-decoration:none;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:10px;
+}

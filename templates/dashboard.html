@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<p>Total Equipment: {{ total }}</p>
+
+<h3>Status Summary</h3>
+
+<ul>
+{% for s in status_counts %}
+<li>{{ s.status }} : {{ s.count }}</li>
+{% endfor %}
+</ul>
+
+<h3>Overdue Maintenance</h3>
+
+<table border="1">
+
+<tr>
+<th>Equipment</th>
+<th>Department</th>
+<th>Next Due</th>
+</tr>
+
+{% for item in overdue %}
+<tr>
+<td>{{ item.equipment_name }}</td>
+<td>{{ item.department }}</td>
+<td>{{ item.next_due_date }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
